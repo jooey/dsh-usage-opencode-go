@@ -9,10 +9,27 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/dsh-usage-opencode-go">npm package</a>
   ·
+  <a href="https://github.com/jooey/dsh-usage-opencode-go">GitHub repo</a>
+  ·
   <a href="#install">Install</a>
   ·
   <a href="#usage">Usage</a>
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/jooey/dsh-usage-opencode-go" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/license/jooey/dsh-usage-opencode-go" alt="GitHub license" />
+</p>
+
+<p align="center">
+  <strong>🚀 Quick start（一条命令装到 DSH）</strong>
+</p>
+
+```bash
+dsh plugin --profile web add dsh-usage-opencode-go
+```
+
+> 完整步骤（含 DSH 安装、patch 注册、GitHub git 安装）见下方 <a href="#install">Install</a>。
 
 > 还没有 OpenCode Go 账号？<br/>
 > **👉 [点这里注册 / 领取 OpenCode Go](https://opencode.ai/go?ref=8G7C93YWQ7)** 👈
