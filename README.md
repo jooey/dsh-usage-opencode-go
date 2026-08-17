@@ -182,20 +182,20 @@ dsh --profile web --dump-config
 
 ## 开发成本（透明记录）
 
-本插件由 **DeepSeek-V4-Pro** 协助开发。截至 v1.0.0 发布，整个开发会话的
+本插件由 **DeepSeek-V4-Pro** 协助开发。整个开发会话（截至 v1.0.1）的
 DSH 统计为：
 
 | 指标 | 数值 |
 |---|---|
-| Turns | 25 |
-| Steps | 346 |
-| LLM 耗时 | 46m7s |
-| Tool call | 42m55s |
-| TTFT avg | 4.1s |
-| 解码速度 | 80 tok/s |
-| Cache hit | 100% |
-| Input | 48.8M tok |
-| Output | 108K tok |
+| Turns | 31 |
+| Steps | 391 |
+| LLM 耗时 | 53m39s |
+| Tool call | 45m52s |
+| TTFT avg | 4.3s |
+| 解码速度 | 79 tok/s |
+| Cache hit | 99% |
+| Input | 61.1M tok |
+| Output | 123K tok |
 
 > 以上为该 DSH 会话的累计统计（采用 DeepSeek-V4-Pro 模型），仅作开发透明度
 > 记录，不代表插件运行时的任何 token 消耗——插件本身只是调用 OpenCode Go
