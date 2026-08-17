@@ -170,7 +170,7 @@ dsh --profile web --dump-config
 | 主机 | `lib/index.js` | Cordis 插件：`/usage` 命令 + `opencodeUsage` Typert 远程服务 |
 | 主机 | `lib/typert.host.js` | Typert 主机 face 清单（`opencodeUsage/snapshot`） |
 | 主机 | `lib/logic.js` | 无依赖纯逻辑（fetch / 格式化） |
-| 浏览器 | `lib/client.js` | 挂载远程服务，注册 `conversation.input.right` slot readout |
+| 浏览器 | `lib/client.js` | 挂载远程服务，注册 `conversation.input.right` slot readout；仅当会话当前 provider 为 `opencode-go` 时渲染，其他 provider 自动隐藏 |
 | 浏览器 | `lib/typert.remote-client.js` | Typert 客户端 face 清单 |
 | 类型 | `lib/index.d.ts` | 主机 face 类型声明 |
 
