@@ -42,9 +42,22 @@ Get OpenCode Go: https://opencode.ai/go?ref=8G7C93YWQ7
 [ ⬛ OpenCode Go 图标 ] Rolling 15.0% · Weekly 6.0% · Monthly 3.0%
 ```
 
+## 第 0 步：安装 DSH
+
+还没有 DSH？先全局安装启动器（Node.js >= 20）：
+
+```bash
+npm install -g @deepseek-ai/dsh
+dsh --version
+```
+
+首次使用会自动初始化 `web` profile 到 `~/.dsh/profiles/web`（Windows：`%USERPROFILE%\.dsh\profiles\web`）。
+
+> 更多 DSH 的说明见官方 README：<https://www.npmjs.com/package/@deepseek-ai/dsh>
+
 ## 先决条件
 
-- 已安装 **DSH** 且使用 `web` profile。
+- 已安装 **DSH** 并使用 `web` profile（见上一步）。
 - 拥有 **OpenCode Go** 的 API Key。
   - 没有账号？先注册 👉 https://opencode.ai/go?ref=8G7C93YWQ7
   - 拿到 key 后写入 `~/.dsh/.credentials.yaml`：
@@ -72,7 +85,30 @@ npm install dsh-usage-opencode-go --save --registry=https://registry.npmjs.org
       name: 'dsh-usage-opencode-go'
 ```
 
-### 方式 B：手动安装（PowerShell）
+### 方式 B：直接给 DSH 传 GitHub 链接（git 安装）
+
+也可以直接把 GitHub 仓库地址交给 DSH 的 pnpm 安装（无需先 clone）：
+
+```bash
+dsh plugin --profile web add github:<用户名>/dsh-usage-opencode-go
+
+# 或完整 URL 形式（任选其一）
+dsh plugin --profile web add https://github.com/<用户名>/dsh-usage-opencode-go.git
+```
+
+> 注意：仓库必须是**公开**的；安装器会直接以仓库根目录的
+> `package.json`（名字必须为 `dsh-usage-opencode-go`）建链安装。
+> 本仓库是纯 JS 包、无构建步骤，所以 git 安装可以直接用。
+
+安装后同样要在 `~/.dsh/profiles/web/cordis.patch.yml` 里追加：
+
+```yaml
+- insert:
+    - id: opencode-usage
+      name: 'dsh-usage-opencode-go'
+```
+
+### 方式 C：PowerShell 一键脚本
 
 仓库自带 `install.ps1`：
 
@@ -82,7 +118,7 @@ npm install dsh-usage-opencode-go --save --registry=https://registry.npmjs.org
 
 它会自动拷贝文件并写入 profile patch。
 
-### 方式 C：源码手动安装
+### 方式 D：源码手动安装
 
 ```powershell
 # 1. 拷贝包到 profile 的 node_modules fallback
@@ -93,6 +129,8 @@ Copy-Item -Recurse -Force .\dsh-usage-opencode-go "$env:USERPROFILE\.dsh\profile
 #        - id: opencode-usage
 #          name: 'dsh-usage-opencode-go'
 ```
+
+以下通用步骤（方式 A–D 都要做）：改完 patch 后，**重启 / 刷新** web GUI（该 profile 默认关闭 HMR）。
 
 ## Usage
 
