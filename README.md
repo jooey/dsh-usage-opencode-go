@@ -37,7 +37,7 @@ dsh plugin --profile web add dsh-usage-opencode-go
 一个用于 **DSH（DeepSeek Harness）** 的插件：把你的 **OpenCode Go (Zen Go)** 订阅用量直接显示在对话里。
 
 - 输入 `/usage` —— 打印完整用量报告（rolling / weekly / monthly）。
-- 输入框右下角常驻一个小读条 —— OpenCode Go 图标 + `Rolling · Weekly · Monthly` 百分比，每分钟自动刷新，点击即打开注册邀请链接。
+- 输入框右下角常驻一个小读条 —— OpenCode Go 图标 + `Rolling · Weekly · Monthly` 百分比，每分钟自动刷新，点击即打开注册邀请链接。**仅当当前会话模型 provider 为 `opencode-go` 时显示；切到其他 provider 自动隐藏。**
 
 数据实时来自官方额度接口 `GET https://opencode.ai/zen/go/v1/usage`。密钥通过 harness 凭据层（`~/.dsh/.credentials.yaml` 或环境变量里的 `OPENCODE_GO_API_KEY`）**只在主机端解析**，绝不会进浏览器、不会被打包进前端代码。
 

@@ -1,5 +1,10 @@
 # Release Notes
 
+
+## v1.0.1
+
+**修复**：右下角用量 readout 只在当前 provider 为 `opencode-go` 时显示；切换到其他 provider（如 deepseek-official）时自动隐藏。
+
 ## v1.0.0
 
 DSH 插件首发：在对话里查看你的 OpenCode Go (Zen Go) 订阅用量。
