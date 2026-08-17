@@ -180,6 +180,27 @@ dsh --profile web --dump-config
 - `OpenCode usage API returned HTTP 4xx` —— key 被额度接口拒绝；必须是 OpenCode Zen Go 的 key。
 - 右下角 readout 不显示 —— 硬刷新浏览器（`Ctrl+Shift+R`）；若控制台报 `Failed to load plugins`，确认包已正确安装、patch 里的 `name` 是 `dsh-usage-opencode-go`。
 
+## 开发成本（透明记录）
+
+本插件由 **DeepSeek-V4-Pro** 协助开发。截至 v1.0.0 发布，整个开发会话的
+DSH 统计为：
+
+| 指标 | 数值 |
+|---|---|
+| Turns | 25 |
+| Steps | 346 |
+| LLM 耗时 | 46m7s |
+| Tool call | 42m55s |
+| TTFT avg | 4.1s |
+| 解码速度 | 80 tok/s |
+| Cache hit | 100% |
+| Input | 48.8M tok |
+| Output | 108K tok |
+
+> 以上为该 DSH 会话的累计统计（采用 DeepSeek-V4-Pro 模型），仅作开发透明度
+> 记录，不代表插件运行时的任何 token 消耗——插件本身只是调用 OpenCode Go
+> 的额度接口，不产生 LLM token。
+
 ## 为开发者
 
 ```bash
