@@ -49,5 +49,5 @@ if (!result.ok) {
 console.log("OK fetchUsage. usage keys:", Object.keys(result.usage).join(", "));
 console.log("--- raw ---");
 console.log(JSON.stringify(result.usage, null, 2));
-console.log("--- formatted (/usage output) ---");
+console.log("--- formatted (/usage-opencode-go output) ---");
 console.log(formatUsages(result.usage));

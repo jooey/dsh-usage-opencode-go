@@ -36,7 +36,7 @@ dsh plugin --profile web add dsh-usage-opencode-go
 
 一个用于 **DSH（DeepSeek Harness）** 的插件：把你的 **OpenCode Go (Zen Go)** 订阅用量直接显示在对话里。
 
-- 输入 `/usage` —— 打印完整用量报告（rolling / weekly / monthly）。
+- 输入 `/usage-opencode-go` —— 打印完整用量报告（rolling / weekly / monthly）。
 - 输入框右下角常驻一个小读条 —— OpenCode Go 图标 + `Rolling · Weekly · Monthly` 百分比，每分钟自动刷新，点击即打开注册邀请链接。**仅当当前会话模型 provider 为 `opencode-go` 时显示；切到其他 provider 自动隐藏。**
 
 数据实时来自官方额度接口 `GET https://opencode.ai/zen/go/v1/usage`。密钥通过 harness 凭据层（`~/.dsh/.credentials.yaml` 或环境变量里的 `OPENCODE_GO_API_KEY`）**只在主机端解析**，绝不会进浏览器、不会被打包进前端代码。
@@ -153,7 +153,7 @@ Copy-Item -Recurse -Force .\dsh-usage-opencode-go "$env:USERPROFILE\.dsh\profile
 
 安装后**重启 / 刷新** web GUI（该 profile 默认关闭 HMR）：
 
-- 对话里输入 **`/usage`** → 完整用量报告 + 邀请链接。
+- 对话里输入 **`/usage-opencode-go`** → 完整用量报告 + 邀请链接。
 - 看输入框**右下角** → 常驻 readout，点击打开邀请链接。
 
 ### 验证配置（不启动服务）
@@ -167,7 +167,7 @@ dsh --profile web --dump-config
 
 | 端 | 文件 | 作用 |
 |---|---|---|
-| 主机 | `lib/index.js` | Cordis 插件：`/usage` 命令 + `opencodeUsage` Typert 远程服务 |
+| 主机 | `lib/index.js` | Cordis 插件：`/usage-opencode-go` 命令 + `opencodeUsage` Typert 远程服务 |
 | 主机 | `lib/typert.host.js` | Typert 主机 face 清单（`opencodeUsage/snapshot`） |
 | 主机 | `lib/logic.js` | 无依赖纯逻辑（fetch / 格式化） |
 | 浏览器 | `lib/client.js` | 挂载远程服务，注册 `conversation.input.right` slot readout；仅当会话当前 provider 为 `opencode-go` 时渲染，其他 provider 自动隐藏 |

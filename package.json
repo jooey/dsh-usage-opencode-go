@@ -1,7 +1,7 @@
 {
   "name": "dsh-usage-opencode-go",
-  "version": "1.0.1",
-  "description": "DSH command plugin: /usage command and composer readout for your OpenCode Go (zen/go) subscription usage",
+  "version": "1.0.2",
+  "description": "DSH command plugin: /usage-opencode-go command and composer readout for your OpenCode Go (zen/go) subscription usage",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

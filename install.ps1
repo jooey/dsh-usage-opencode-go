@@ -26,7 +26,7 @@ Write-Host "Installed plugin => $dest"
 
 # 2. register it in the profile patch layer (idempotent)
 $insert = @"
-# dsh-usage-opencode-go: /usage command + composer readout for the OpenCode Go quota.
+# dsh-usage-opencode-go: /usage-opencode-go command + composer readout for the OpenCode Go quota.
 - insert:
     - id: opencode-usage
       name: 'dsh-usage-opencode-go'
@@ -39,4 +39,4 @@ if ($text -notmatch "opencode-usage") {
 } else {
   Write-Host "Plugin already registered in $patchPath"
 }
-Write-Host "Done. Restart the DSH web app. /usage prints the full report, and the composer shows the readout."
+Write-Host "Done. Restart the DSH web app. /usage-opencode-go prints the full report, and the composer shows the readout."
