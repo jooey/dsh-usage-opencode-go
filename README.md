@@ -25,6 +25,7 @@
 - **右下角读条**：`Rolling x% (倒计时) · Weekly x% (倒计时) · Monthly x% (倒计时)`，内容超宽时鼠标悬停跑马灯滚动
 - **`/usage-opencode-go` 命令**：三个窗口的百分比 + 重置时间
 - **密钥安全**：只在 DSH 主机端解析，绝不进浏览器
+- **邀请注册**：[OpenCode Go](https://opencode.ai/go?ref=8G7C93YWQ7) 新用户有注册福利
 
 ## 系列插件 / Family
 
@@ -105,6 +106,7 @@ Put your OpenCode Go (Zen Go) subscription quota right inside the DSH conversati
 - **Composer chip**: `Rolling x% (countdown) · Weekly x% (countdown) · Monthly x% (countdown)`; marquee-scrolls on hover when content overflows
 - **`/usage-opencode-go` command**: per-window percentages + reset times
 - **Key safety**: resolved host-side only, never inlined into the browser
+- **Invitation**: [OpenCode Go](https://opencode.ai/go?ref=8G7C93YWQ7) — sign-up bonus for new users
 
 ## Prerequisites
 
