@@ -1,16 +1,18 @@
 {
   "name": "dsh-usage-opencode-go",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "DSH command plugin: /usage-opencode-go command and composer readout for your OpenCode Go (zen/go) subscription usage",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
-  "author": "",
+  "author": "jooey",
   "keywords": [
     "dsh",
     "deepseek-harness",
     "opencode",
+    "opencode-go",
+    "coding-plan",
     "usage",
     "quota",
     "plugin"
@@ -27,6 +29,8 @@
   },
   "files": [
     "lib",
+    "install.sh",
+    "install.ps1",
     "README.md",
     "LICENSE"
   ],
@@ -40,5 +44,13 @@
     "@deepseek-ai/dsh-commands": "^0.1.0-rc.6",
     "@deepseek-ai/dsh-credentials": "^0.1.0-rc.6",
     "@deepseek-ai/dsh-typert-protocol": "^0.1.0-rc.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jooey/dsh-opencode-usage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jooey/dsh-opencode-usage/issues"
+  },
+  "homepage": "https://github.com/jooey/dsh-opencode-usage#readme"
 }

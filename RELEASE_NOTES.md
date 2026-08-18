@@ -1,5 +1,16 @@
 # Release Notes
 
+## v1.1.0
+
+**极简 DSH 用量监控 · 统一格式**
+
+- 读条格式统一为 `Rolling x% (倒计时) · Weekly x% (倒计时) · Monthly x% (倒计时)`——五插件家族（OpenCode Go / DeepSeek / MiniMax / Kimi / GLM）同一套格式，顺序 Rolling → Weekly → Monthly
+- 新增每个窗口的重置倒计时（API 一直返回 `resetsAt`，此前未展示）
+- 内容超宽时鼠标悬停跑马灯滚动，图标区域不遮挡，完整文本在悬停提示兜底
+- 代码风格统一（2 空格缩进）、package 元数据补齐（author / repository / keywords）
+
+**English**: unified chip format across the five-plugin family (`Rolling/Weekly/Monthly x% (countdown)`), reset countdowns now rendered, marquee scroll on overflow, consistent code style and package metadata.
+
 ## v1.0.2
 
 **变更**：`/usage` 命令改名为 `/usage-opencode-go`，避免与其他 provider 的
