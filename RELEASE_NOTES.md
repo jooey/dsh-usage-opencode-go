@@ -1,5 +1,16 @@
 # Release Notes
 
+## v1.1.1
+
+**修复：窄窗口下输入框读条覆盖左侧 Full access 下拉框**
+
+- 读条宽度不再使用固定 `max-width` 上限，改为**实测适配**：测量输入框工具行的真实剩余空间（行内宽 − 行间隔 − 左侧工具组 − 右侧模型选择/上下文计量/发送按钮），把读条精确限制在剩余宽度内
+- 空间足够时完整显示；空间紧张时平滑截断；剩余不足 80px 时收起为仅图标——任何窗口宽度下都不再向左溢出
+- 通过 `ResizeObserver` 监听行与右侧组：窗口缩放、模型切换、发送按钮出现/消失时自动重算（`useLayoutEffect` 首测在绘制前完成，无闪烁）
+- OpenCode Go 版本的悬停跑马灯滚动行为保持不变，仅叠加同样的宽度适配逻辑
+
+**English**: chip width is now measured to fit the composer row's actual leftover space instead of a fixed max-width cap — full text when it fits, smooth truncation when tight, icon-only below 80px, so it never overlaps the left "Full access" dropdown at any width; refit is driven by ResizeObserver on the row and the trailing group.
+
 ## v1.1.0
 
 **极简 DSH 用量监控 · 统一格式**
