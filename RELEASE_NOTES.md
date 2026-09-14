@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.1.3
+
+**修复：窗口缩放后跑马灯短暂失效**
+
+- 溢出量（--marquee-shift）原来只靠 5 秒定时器重测：窗口放大/缩小后最长 5 秒内悬停无滚动，且读条重挂载（切换 provider/会话）后新元素可能一直拿不到旧元素上的位移量
+- 改用 ResizeObserver 直接监听裁剪窗：任何缩放立即重测；测量时实时读取 chipRef 且只在元素仍挂载时写回，effect 依赖补上 chipCap 与 provider 开关
+
+**English**: the marquee shift was only re-measured on a 5s poll (and could target a detached element after a provider/session switch), so hovering did nothing right after a window resize; measurement now runs through a ResizeObserver on the clip box, reads chipRef live, and the effect re-runs on chipCap/provider changes.
+
 ## v1.1.2
 
 **兼容 dsh 0.1.2-alpha.2**
