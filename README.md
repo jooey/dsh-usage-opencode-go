@@ -69,6 +69,27 @@ npm install dsh-usage-opencode-go --save --registry=https://registry.npmjs.org
 
 重启 / 刷新 web GUI 生效。
 
+### DSH Desktop App 桌面版
+
+桌面版使用独立的 `desktop` profile（不是 `web`）：
+
+```bash
+cd ~/.dsh/profiles/desktop
+pnpm add dsh-usage-opencode-go --registry=https://registry.npmjs.org
+```
+
+然后往 `~/.dsh/profiles/desktop/cordis.patch.yml` 追加：
+
+```yaml
+- insert:
+    - id: opencode-usage
+      name: 'dsh-usage-opencode-go'
+```
+
+保存后 host 侧自动热加载生效；界面上的读条 / 命令补全若未立刻出现，刷新一下页面即可，**无需重启 App**。
+
+> 桌面版的客户端同样是 web 平台，`dsh.client.platform: "web"` 的插件两种宿主通用，无需单独构建。profile 目录自带 `pnpm-workspace.yaml`（`nodeLinker: hoisted`、`autoInstallPeers: false`），在 profile 目录内用 pnpm 安装不会误装 peer 依赖遮蔽宿主。
+
 <details>
 <summary>其他安装方式（git / 一键脚本 / 手动）</summary>
 
@@ -137,5 +158,26 @@ Then append to `~/.dsh/profiles/web/cordis.patch.yml`:
 ```
 
 Restart / refresh the web GUI to activate.
+
+### DSH Desktop App
+
+The desktop app uses its own `desktop` profile (not `web`):
+
+```bash
+cd ~/.dsh/profiles/desktop
+pnpm add dsh-usage-opencode-go --registry=https://registry.npmjs.org
+```
+
+Then append to `~/.dsh/profiles/desktop/cordis.patch.yml`:
+
+```yaml
+- insert:
+    - id: opencode-usage
+      name: 'dsh-usage-opencode-go'
+```
+
+The host side hot-reloads as soon as the file is saved; if the chip / command completion doesn't show up immediately, just refresh the page — **no app restart needed**.
+
+> The desktop app's client is also the web platform, so plugins declaring `dsh.client.platform: "web"` work on both hosts with no separate build. The profile directory ships its own `pnpm-workspace.yaml` (`nodeLinker: hoisted`, `autoInstallPeers: false`), so installing with pnpm inside it won't pull in peer dependencies that could shadow the host.
 
 MIT License · Welcome a ⭐ Star!
